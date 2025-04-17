@@ -16,7 +16,7 @@ extern "C" void host_entry(std::int32_t* fn_arg_0, std::int32_t* fn_arg_1, std::
     CircularBufferConfig cb_config_5 = CircularBufferConfig(1*400, {{0, tt::DataFormat::Int32}}).set_page_size(0, 400);
     CircularBufferConfig cb_config_6 = CircularBufferConfig(1*400, {{1, tt::DataFormat::Int32}}).set_page_size(1, 400);
     CircularBufferConfig cb_config_7 = CircularBufferConfig(1*400, {{16, tt::DataFormat::Int32}}).set_page_size(16, 400);
-    CBHandle cb_8 = tt_metal::CreateCircularBuffer(program_0, core, cb_config_5);
+    CBHandle cb_8 = tt_metal::CreateCircularBuffer(program_0, CoreCoord{0, 0}, cb_config_5);
     CBHandle cb_9 = tt_metal::CreateCircularBuffer(program_0, core, cb_config_6);
     CBHandle cb_10 = tt_metal::CreateCircularBuffer(program_0, core, cb_config_7);
     KernelHandle kernel_11 = CreateKernel(program_0, "/home/jakedves/tenstorrent-projects/fortran-auto/data_in.cpp", core, DataMovementConfig{.processor = DataMovementProcessor::RISCV_0, .noc=NOC::RISCV_0_default});

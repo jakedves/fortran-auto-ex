@@ -5,14 +5,15 @@
 #include "debug/dprint.h"
 
 void MAIN {
-    binary_op_init_common(static_cast<std::uint32_t>(0), static_cast<std::uint32_t>(1), static_cast<std::uint32_t>(16));
+    binary_op_init_common(0, 1, 16);
+    mm_init(0, 1, 0, 0);
     cb_wait_front(0, 1);
     cb_wait_front(1, 1);
     tile_regs_acquire();
-    matmul_tiles(static_cast<std::uint32_t>(0), static_cast<std::uint32_t>(1), static_cast<std::uint32_t>(0), static_cast<std::uint32_t>(0), static_cast<std::uint32_t>(0), static_cast<std::uint32_t>(0));
+    matmul_tiles(0, 1, 0, 0, 0, 0);
     tile_regs_commit();
     tile_regs_wait();
-    pack_tile<false>(static_cast<std::uint32_t>(0), static_cast<std::uint32_t>(16), static_cast<std::uint32_t>(0));
+    pack_tile<false>(0, 16, 0);
     tile_regs_release();
     cb_pop_front(0, 1);
     cb_pop_front(1, 1);

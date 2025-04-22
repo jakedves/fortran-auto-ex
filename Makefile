@@ -8,6 +8,6 @@ LINKER=clang++-17
 LFLAGS=-rdynamic -L${TT_METAL_LIB} -ltt_metal -ldl -lstdc++fs -pthread -lyaml-cpp -lm -lc++ -ldevice
  
 all:
-	${CXX} ${CFLAGS} -c host.cpp
-	${LINKER} host.o -o host ${LFLAGS}
+	${CXX} ${CFLAGS} -c host.cpp -o ohost.o
+	${LINKER} fortran.o ohost.o -o executable ${LFLAGS}
 	

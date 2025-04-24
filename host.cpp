@@ -26,7 +26,7 @@ extern "C" void host_entry(std::int32_t* fn_arg_0, std::int32_t* fn_arg_1, std::
     SetRuntimeArgs(program_0, kernel_13, core, {});
     SetRuntimeArgs(program_0, kernel_12, core, {buffer_4->address(), 0, 400});
     EnqueueProgram(device_1->command_queue(), program_0, false);
-    printf("Program queued...");
+    printf("Jake: Program queued...");
     Finish(device_1->command_queue());
     printf("Program finished.");
     EnqueueReadBuffer(device_1->command_queue(), buffer_4, fn_arg_2, false);

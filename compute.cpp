@@ -14,7 +14,7 @@ void MAIN {
 
     DPRINT_MATH(DPRINT << "About to aquire tile regs" << ENDL());
     tile_regs_acquire();
-    matmul_tiles(0, 1, 0, 0, 0);
+    matmul_tiles(0, 1, 0, 0, 0, 0);
     tile_regs_commit();
 
     DPRINT_MATH(DPRINT << "Performed add and committed tiles" << ENDL());
